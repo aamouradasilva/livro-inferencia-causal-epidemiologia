@@ -1,5 +1,7 @@
-# Apagando dados
-rm(list=ls())
+# Livro Introdução à Inferência Causal em Epidemiologia: uma abordagem gráfica e contrafatual
+# Capítulo 2
+# 2.2.1. Cálculo do efeito causal médio com as respostas potenciais fatual e contrafatual no R
+# página 22
 
 # Entrando dados
 df <- data.frame(
@@ -13,6 +15,7 @@ tabaco <- data.frame(d1 = rep(df$d1, df$n),
 
 # Cálculo das diferenças entre as respostas potenciais individuais
 d <- tabaco$d1-tabaco$d0
+
 # Cálculo do Efeito Causal médio (média das diferenças entre as respostas potenciais individuais)
 summary(d)
 
