@@ -17,13 +17,13 @@ library(descr)
 # D - câncer de pulmão
 # U - gene do fumo
 
-#b1  E=1 and D=0
+#b1  E=1 e D=0
 b1<-1296
-#b0  E=0 and D=0
+#b0  E=0 e D=0
 b0<-61
-#a1  E=1 and D=1
+#a1  E=1 e D=1
 a1<-1350
-#a0  X=0 and D=1
+#a0  E=0 e D=1
 a0<-7
 
 # Arbitrando os valores de ORdu, OReu e pu0 
