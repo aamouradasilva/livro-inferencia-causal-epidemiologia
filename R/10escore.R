@@ -251,7 +251,7 @@ tail(match)
 t.test(match$re78[match$treat==1],match$re78[match$treat==0],paired=TRUE)
 
 # Calculando o efeito causal ATT
-# regressao linear assumindo independencia
+# regressao linear assumindo independência
 fit <- lm(re78~ treat, data=match)
 summary(fit)
 confint(fit)
@@ -276,7 +276,7 @@ tail(match)
 t.test(match$re78[match$treat==1],match$re78[match$treat==0],paired=TRUE)
 
 # Calculando o efeito causal ATT
-# regressao linear assumindo independencia
+# regressao linear assumindo independência
 fit <- lm(re78~ treat, data=match)
 summary(fit)
 confint(fit)
