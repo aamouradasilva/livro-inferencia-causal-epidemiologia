@@ -60,8 +60,8 @@ list treat age educ re78 pslog in 605/614
 * Verificando área de suporte comum pelo boxplot
 graph box pslog, ytitle(Escore de propensão) by(treat)
 
-* Ponderacao com escore de propensao
-* calculando os pesos usando ATE - Efeito medio do tratamento
+* Ponderação com escore de propensão
+* calculando os pesos usando ATE - Efeito médio do tratamento
 * para o grupo de tratamento = 1/ps
 * para o grupo controle= 1/(1-ps)
 gen wa=1/pslog if treat==1
@@ -70,28 +70,28 @@ replace wa=1/(1-pslog) if treat==0
 * Verificando se o peso foi incorporado ao banco de dados
 list treat age educ re78 pslog wa in 1/10
 
-* Checando balanceamento apos a ponderacao com escore de propensao
-* variavel continua - regressao linear ponderada com o tratamento como variavel explanatoria 
-* e a variavel continua como desfecho
+* Checando balanceamento após a ponderaçao com escore de propensão
+* variavel contínua - regressão linear ponderada com o tratamento como variável explanatória 
+* e a variável contínua como desfecho
 regress re74 treat [pweight=wa]
 
-* variavel categorica binaria- regressao logistica ponderada com o tratamento como variavel explanatoria 
+* variável categórica binária- regressão logística ponderada com o tratamento como variável explanatória 
 * e a variável categórica (sem diploma universitário) como resposta
 logistic nodegree treat [pweight=wa]
 
 * Efeito causal
-* Regressao linear incluindo desfecho e apenas o tratamento como variavel explanatoria
-* com ponderacao pelo escore de propensao
+* Regressão linear incluindo desfecho e apenas o tratamento como variável explanatória
+* com ponderação pelo escore de propensão
 regress re78 treat [pweight=wa]
 
 * Usando teffects - estimando ATE
 teffects ipw (re78) (treat age educ black hispan nodegree married re74 re75)
-* Checando balanceamento apos a ponderacao com escore de propensao
+* Checando balanceamento após a ponderação com escore de propensão
 tebalance summ
 
 * Usando teffects - estimando ATT
 teffects ipw (re78) (treat age educ black hispan nodegree married re74 re75), atet
-* Checando balanceamento apos a ponderacao com escore de propensao
+* Checando balanceamento após a ponderação com escore de propensão
 tebalance summ
 tebalance density educ
 
@@ -113,7 +113,7 @@ predict pslog
 * Pareamento - rotina teffects - opção psmatch - ATE
 teffects psmatch (re78) (treat age educ black hispan nodegree married re74 re75)
 
-* Checando balanceamento apos o pareamento com escore de propensao
+* Checando balanceamento após o pareamento com escore de propensão
 tebalance summarize
 tebalance density age
 tebalance box age
@@ -121,19 +121,19 @@ tebalance box age
 * Pareamento - rotina teffects - opção psmatch - ATT
 teffects psmatch (re78) (treat age educ black hispan nodegree married re74 re75), atet
 
-* Checando balanceamento apos o pareamento com escore de propensao
+* Checando balanceamento após o pareamento com escore de propensão
 tebalance summarize
 
 * Pareamento - rotina teffects - opção nnmatch - ATE
 teffects nnmatch (re78 age educ black hispan nodegree married re74 re75) (treat)
 
-* Checando balanceamento apos o pareamento com escore de propensao
+* Checando balanceamento após o pareamento com escore de propensão
 tebalance summarize
 
 * Pareamento - rotina teffects - opção nnmatch - ATT
 teffects nnmatch (re78 age educ black hispan nodegree married re74 re75) (treat), atet
 
-* Checando balanceamento apos o pareamento com escore de propensao
+* Checando balanceamento após o pareamento com escore de propensão
 tebalance summarize
 
 tebalance density educ
