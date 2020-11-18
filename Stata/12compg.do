@@ -6,7 +6,7 @@
 
 
 * Construindo o banco de dados
-input psf pobreza vac
+input esf pobreza vac
 1 1 0.4
 1 0 0.20
 1 1 0.30
@@ -20,35 +20,35 @@ input psf pobreza vac
 end
 
 * Salvando o banco de dados
-save psf
+save esf
 
-* Calculando a média da vacinação segundo participação no PSF
-bysort psf: sum vac
+* Calculando a média da vacinação segundo participação na ESF
+bysort esf: sum vac
 
 * Copiando banco de dados (salvando com outro nome)
 * para gerar banco onde todos estão expostos
-save psfexp
+save esfexp
 * para gerar banco onde todos não estão expostos
-save psfnexp
+save esfnexp
 
-* Recodificando psf=1 em psfexp e psf=0 em psfnexp
-use psfexp
-replace psf=1
+* Recodificando esf=1 em esfexp e esf=0 em esfnexp
+use esfexp
+replace esf=1
 save, replace
 
-use psfnexp
-replace psf=0
+use esfnexp
+replace esf=0
 save, replace
 
 * Verificando se a recodificação foi realizada corretamente
-use psf
-tab psf
+use esf
+tab esf
 * Gerando variável indicadora banco de dados original 
 gen ind=-1
 save, replace
 
-use psfexp
-tab psf
+use esfexp
+tab esf
 * Gerando variável indicadora banco de dados dos expostos 
 gen ind=1
 * Apagando valores na variável resposta
@@ -56,8 +56,8 @@ replace vac=.
 save, replace
 
 
-use psfnexp
-tab psf
+use esfnexp
+tab esf
 * Gerando variável indicadora banco de dados dos não expostos
 gen ind=0
 * Apagando valores na variável resposta
@@ -65,20 +65,20 @@ replace vac=.
 save, replace
 
 * Unindo bancos de dados
-use psf
-append using psfexp 
-append using psfnexp
+use esf
+append using esfexp 
+append using esfnexp
 
 save total
 
 * Rodando regressão linear com tratamento e desfecho
-regress vac psf
+regress vac esf
 
 * Rodando regressão linear com tratamento e confundidor incluindo interacao entre tratamento e confundidor
 * Como só há 10 casos com vac preenchida (os outros 20 foram recodificados como ignorados), 
 * a regressão só usará as observações originais
 * Estimando o percentual de vacinação infantil incompleta a partir das variáveis do modelo
-regress vac psf##pobreza
+regress vac esf##pobreza
 
 * Usando a regressão nas 10 observações originais (ind=-1) para predizer as respostas potenciais se todos estivessem expostos (ind=1) 
 * ou se todos não estivessem expostos (ind=0)
@@ -101,6 +101,6 @@ tab compgd
 * Apagando as observações originais
 drop if ind==-1
 
-* Obtendo o efeito causal pela regressão linear - regredindo psf nas respostas potenciais
+* Obtendo o efeito causal pela regressão linear - regredindo esf nas respostas potenciais
 * O intervalo de confiança de 95% deve ser calculado por bootstrap
-regress resp psf
+regress resp esf
