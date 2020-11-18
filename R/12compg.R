@@ -5,54 +5,54 @@
 
 
 # Construindo o banco de dados
-psf<- rbind (c(1,1,0.4), c(1,0,0.20), c(1,1,0.30), c(1,1,0.45), c(1,1,0.40), c(0,0,0.30), c(0,0,0.40), c(0,1,0.50), c(0,0,0.10), c(0,0,0.15)) 
-psf<-as.data.frame (psf) 
-names (psf) <-c("psf", "pobreza", "vac")
+esf<- rbind (c(1,1,0.4), c(1,0,0.20), c(1,1,0.30), c(1,1,0.45), c(1,1,0.40), c(0,0,0.30), c(0,0,0.40), c(0,1,0.50), c(0,0,0.10), c(0,0,0.15)) 
+esf<-as.data.frame (esf) 
+names (esf) <-c("esf", "pobreza", "vac")
 
 # Obtendo listagem do banco de dados
-psf
+esf
 
-# Calculando a média da vacinação segundo participação no PSF
-tapply(psf$vac, psf$psf, summary)
+# Calculando a média da vacinação segundo participação na ESF
+tapply(esf$vac, esf$esf, summary)
 
 # Rodando regressão linear com tratamento e desfecho
-reg<-lm(vac~ psf, data=psf)
+reg<-lm(vac~ esf, data=esf)
 summary(reg)
 # Obtendo intervalo de confiança de 95%
 confint(reg)
 
 # Rodando regressão linear com tratamento e confundidor incluindo interação entre tratamento e confundidor
 # Estimando o percentual de vacinação infantil incompleta a partir das variáveis do modelo
-reg<-lm(vac~ psf*pobreza, data=psf)
+reg<-lm(vac~ esf*pobreza, data=esf)
 summary(reg)
 # Obtendo intervalo de confiança de 95%
 confint(reg)
 
 # Copiando dados
-psfexp <- psfnexp <- psf
+esfexp <- esfnexp <- esf
 
-# Recodificando psf=1 em psfexp e psf=0 em psfnexp
-psfexp$psf <-1
-psfnexp$psf <-0
+# Recodificando esf=1 em esfexp e esf=0 em esfnexp
+esfexp$esf <-1
+esfnexp$esf <-0
 
 # Verificando se a recodificação foi realizada corretamente
 library(descr)
-freq(psf$psf)
-freq(psfexp$psf)
-freq(psfnexp$psf)
+freq(esf$esf)
+freq(esfexp$esf)
+freq(esfnexp$esf)
 
 
 # Usando a regressão para predizer as respostas potenciais se todos estivessem expostos
-predict.resp.exp <-predict(reg, newdata=psfexp, type= "response")
+predict.resp.exp <-predict(reg, newdata=esfexp, type= "response")
 predict.resp.exp
 # Gravando as respostas potenciais no banco de dados
-psfexp$resppot <- predict.resp.exp 
+esfexp$resppot <- predict.resp.exp 
 
 # Usando a regressão para predizer as respostas potenciais se todos não estivessem expostos
-predict.resp.nexp <-predict(reg, newdata=psfnexp, type= "response")
+predict.resp.nexp <-predict(reg, newdata=esfnexp, type= "response")
 predict.resp.nexp
 # Gravando as respostas potenciais no banco de dados
-psfnexp$resppot <- predict.resp.nexp 
+esfnexp$resppot <- predict.resp.nexp 
 
 # Calculando a média das respostas potenciais se todos estivessem expostos
 exp<-mean(predict.resp.exp)
@@ -66,10 +66,10 @@ compgd<-exp-nexp
 compgd
 
 # Juntando os dois bancos de dados
-psf2=rbind(psfexp, psfnexp)
+esf2=rbind(esfexp, esfnexp)
 
-# Obtendo o efeito causal pela regressão linear - regredindo psf nas respostas potenciais
-reg<-lm(resppot~ psf, data=psf2)
+# Obtendo o efeito causal pela regressão linear - regredindo esf nas respostas potenciais
+reg<-lm(resppot~ esf, data=esf2)
 summary(reg)
 
 # Intervalo de confiança deve ser calculado por bootstrap
