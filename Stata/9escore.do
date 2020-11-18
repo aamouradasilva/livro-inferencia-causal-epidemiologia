@@ -4,7 +4,7 @@
 * página 183-184
 
 * Entrada de dados
-input psf renda escolaridade
+input esf renda escolaridade
 1 0.25 2
 1 1 4
 1 0.75 6
@@ -18,13 +18,13 @@ input psf renda escolaridade
 end
 
 * Salvando os dados
-save psf2
+save esf2
 
 * Modelo logístico
-logit psf renda escolaridade
+logit esf renda escolaridade
 
 * Estimando o escore de propensão (ep)
 predict ep
 
 * Listagem para verificar que o escore de propensão foi incorporado ao banco de dados
-list psf renda escolaridade ep
+list esf renda escolaridade ep
