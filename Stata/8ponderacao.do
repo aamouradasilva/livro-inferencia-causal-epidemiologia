@@ -5,7 +5,7 @@
 
 
 * Construindo o banco de dados
-input psf pobreza vac
+input esf pobreza vac
 1 1 0.4
 1 0 0.20
 1 1 0.30
@@ -19,14 +19,14 @@ input psf pobreza vac
 end
 
 * Salvando o banco de dados
-save psf, replace
+save esf, replace
 
-* Calculando a méia da vacinação segundo participação no PSF
-bysort psf: sum vac
+* Calculando a méia da vacinação segundo participação na ESF
+bysort esf: sum vac
 
 * Rodando regressão logística com tratamento e confundidor
 * Estimando o escore de propensão
-logit psf pobreza
+logit esf pobreza
 
 * Calculando e incluindo o escore de propensão no banco de dados
 predict ep
@@ -38,14 +38,13 @@ list
 * calculando os pesos 
 * para o grupo de tratamento = 1/ep
 * para o grupo controle= 1(1-ep)
-gen peso=1/ep if psf==1
-replace peso=1/(1-ep) if psf==0
+gen peso=1/ep if esf==1
+replace peso=1/(1-ep) if esf==0
 
 * Listagem do banco de dados com o peso
 list
 
 * Cálculo do efeito causal em modelo explicativo
 * ponderado pelo inverso da probabilidade de seleção
-regress vac psf [pweight=peso]
-
+regress vac esf [pweight=peso]
 
