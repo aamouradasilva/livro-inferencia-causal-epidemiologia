@@ -25,7 +25,7 @@ regress re78 treat age educ black hispan nodegree married i.treat##c.re74 c.re74
 * Expandindo banco de dados para gerar cópia do banco  
 expand 2, generate(copia)
 * gerado automaticamente
-* copia = 0  (banco de dados onde todos não estão expostos)
+* copia = 0  (banco de dados onde ninguém está exposto)
 * copia = 1  (banco de dados onde todos estão expostos)
 tab copia
 
@@ -40,7 +40,7 @@ by copia, sort: summarize treat
 * Usando a regressão nas observações originais 
 * realizada antes das duplicações
 * para predizer os desfechos se todos estivessem expostos (copia=1) 
-* ou se todos não estivessem expostos (copia=0)
+* ou se ninguém estivesse exposto (copia=0)
 predict resp
 
 * Verificando os valores médios das  predições no banco original 
@@ -93,7 +93,7 @@ program define bootlalonde, rclass
 		* Usando a regressão nas observações originais realizada 
 		* antes das duplicações
 		* para predizer os desfechos se todos estivessem expostos (copia=1) 
-		* ou se todos não estivessem expostos (copia=0)
+		* ou se ninguém estivesse exposto (copia=0)
 		predict resp
 		* Calculando a média das respostas potenciais na situação 
 		* de não exposição
