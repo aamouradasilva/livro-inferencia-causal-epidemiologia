@@ -48,7 +48,7 @@ predict.resp.exp
 # Gravando as respostas potenciais no banco de dados
 esfexp$resppot <- predict.resp.exp 
 
-# Usando a regressão para predizer as respostas potenciais se todos não estivessem expostos
+# Usando a regressão para predizer as respostas potenciais se ninguém estivesse exposto
 predict.resp.nexp <-predict(reg, newdata=esfnexp, type= "response")
 predict.resp.nexp
 # Gravando as respostas potenciais no banco de dados
@@ -57,7 +57,7 @@ esfnexp$resppot <- predict.resp.nexp
 # Calculando a média das respostas potenciais se todos estivessem expostos
 exp<-mean(predict.resp.exp)
 exp
-# Calculando a média das respostas potenciais se todos não estivessem expostos
+# Calculando a média das respostas potenciais se ninguém estivesse exposto
 nexp<-mean(predict.resp.nexp)
 nexp
 
