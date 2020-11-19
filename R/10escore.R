@@ -84,7 +84,7 @@ head(lalonde, n=10)
 tail(lalonde, n=10)
 
 # Verificando área de suporte comum pelo boxplot
-boxplot(pslog ~ treat, data=lalonde, ylab="Escore de propensao", xlab="Programa de Retreinamento Profissional")
+boxplot(pslog ~ treat, data=lalonde, ylab="Escore de propensao", xlab="Programa de retreinamento profissional")
 
 # Ponderação com escore de propensão
 # calculando os pesos usando ATE - Efeito médio do tratamento
