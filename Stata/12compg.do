@@ -28,7 +28,7 @@ bysort esf: sum vac
 * Copiando banco de dados (salvando com outro nome)
 * para gerar banco onde todos estão expostos
 save esfexp
-* para gerar banco onde todos não estão expostos
+* para gerar banco onde ninguém está exposto
 save esfnexp
 
 * Recodificando esf=1 em esfexp e esf=0 em esfnexp
@@ -81,7 +81,7 @@ regress vac esf
 regress vac esf##pobreza
 
 * Usando a regressão nas 10 observações originais (ind=-1) para predizer as respostas potenciais se todos estivessem expostos (ind=1) 
-* ou se todos não estivessem expostos (ind=0)
+* ou se ninguém estivesse exposto (ind=0)
 predict resp
 
 * Calculando a média das respostas potenciais se todos estivessem expostos
@@ -89,7 +89,7 @@ sum resp if ind==1
 gen exp=r(mean)
 tab exp
 
-* Calculando a média das respostas potenciais se todos não estivessem expostos
+* Calculando a média das respostas potenciais se ninguém estivesse exposto
 sum resp if ind==0
 gen nexp=r(mean)
 tab nexp
