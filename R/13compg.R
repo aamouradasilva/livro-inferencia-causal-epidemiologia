@@ -50,7 +50,7 @@ head(predict.resp.exp)
 # Gravando as respostas potenciais no banco de dados
 lalondeexp$resppot <- predict.resp.exp 
 
-# Usando a regressão para predizer as respostas potenciais se todos não estivessem expostos
+# Usando a regressão para predizer as respostas potenciais se ninguém estivesse exposto
 predict.resp.nexp <-predict(reg, newdata=lalondenexp, type= "response")
 head(predict.resp.nexp)
 # Gravando as respostas potenciais no banco de dados
@@ -60,7 +60,7 @@ lalondenexp$resppot <- predict.resp.nexp
 exp<-mean(predict.resp.exp)
 exp
 
-# Calculando a média das respostas potenciais se todos não estivessem expostos
+# Calculando a média das respostas potenciais se ninguém estivesse exposto
 nexp<-mean(predict.resp.nexp)
 nexp
 
