@@ -42,7 +42,7 @@ tab treat hispan, row chi2
 regress re74 treat
 
 * variável categórica - regressão logística com o tratamento como variável explanatória 
-* e a variável categórica (sem disploma universitário) como resposta
+* e a variável categórica (sem diploma universitário) como resposta
 logistic nodegree treat
 
 * Estimação do escore de propensão por regressão logística
