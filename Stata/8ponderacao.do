@@ -21,7 +21,7 @@ end
 * Salvando o banco de dados
 save esf, replace
 
-* Calculando a méia da vacinação segundo participação na ESF
+* Calculando a média da vacinação segundo participação na ESF
 bysort esf: sum vac
 
 * Rodando regressão logística com tratamento e confundidor
