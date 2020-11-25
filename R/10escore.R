@@ -39,12 +39,14 @@ freq(lalonde$treat)
 # Estimando associação em modelo de regressão não ajustado
 reg <- lm(re78 ~ treat,data=lalonde)
 summary(reg)
+
 # Obtendo intervalo de confiança de 95%
 confint(reg)
 
 # Estimando associação em modelo de regressão ajustado
 reg <- lm(re78 ~ treat + age + educ + black + hispan + nodegree + married + + re74 + re75, data=lalonde)
 summary(reg)
+
 # Obtendo intervalo de confiança de 95%
 confint(reg)
 
