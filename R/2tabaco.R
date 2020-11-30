@@ -3,6 +3,10 @@
 # 2.2.1. Cálculo do efeito causal médio com as respostas potenciais fatual e contrafatual no R
 # páginas 22-23
 
+# arquivo salvo em UTF-8
+# Se os caracteres acentuados e a cedilha não aparecerem corretamente
+# No R Studio, escolha a opção File : Reopen with Encoding: UTF-8
+
 # Entrando dados
 df <- data.frame(
   d1=c(1,1,0,0),
