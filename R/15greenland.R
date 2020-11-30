@@ -3,6 +3,9 @@
 # 15.4. Script no R - Análise de Sensibilidade pelo método de Greenland
 # páginas 303-306
 
+# arquivo salvo em UTF-8
+# Se os caracteres acentuados e a cedilha não aparecerem corretamente
+# No R Studio, escolha a opção File : Reopen with Encoding: UTF-8
 
 # método de Greenland
 # Arbitrando os valores de ORdu, OReu e pu0 
