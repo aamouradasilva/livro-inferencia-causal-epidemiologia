@@ -3,7 +3,9 @@
 # 10. Exemplo de análise com escore de propensão em Epidemiologia no R
 # páginas 197-230
 
-
+# arquivo salvo em UTF-8
+# Se os caracteres acentuados e a cedilha não aparecerem corretamente
+# No R Studio, escolha a opção File : Reopen with Encoding: UTF-8
 
 # Instalando os pacotes necessários
 install.packages("survey")
