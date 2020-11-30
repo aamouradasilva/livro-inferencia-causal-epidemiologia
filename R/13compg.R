@@ -3,6 +3,10 @@
 # 13. Exemplo de análise usando computação G paramétrica no R
 # páginas 277-284
 
+# arquivo salvo em UTF-8
+# Se os caracteres acentuados e a cedilha não aparecerem corretamente
+# No R Studio, escolha a opção File : Reopen with Encoding: UTF-8
+
 # Carregando pacote twang
 library(twang)
 
