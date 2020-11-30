@@ -3,6 +3,10 @@
 # 15.6. Abordagens de Rosenbaum
 # páginas 309-312
 
+# arquivo salvo em UTF-8
+# Se os caracteres acentuados e a cedilha não aparecerem corretamente
+# No R Studio, escolha a opção File : Reopen with Encoding: UTF-8
+
 # Teste exato de McNemar
 binom.test(16,17, p=0.5, alternative="greater")
 
