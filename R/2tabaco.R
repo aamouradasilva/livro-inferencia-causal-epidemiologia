@@ -1,7 +1,7 @@
 # Livro Introdução à Inferência Causal em Epidemiologia: uma abordagem gráfica e contrafatual
 # Capítulo 2
 # 2.2.1. Cálculo do efeito causal médio com as respostas potenciais fatual e contrafatual no R
-# página 22
+# páginas 22-23
 
 # Entrando dados
 df <- data.frame(
