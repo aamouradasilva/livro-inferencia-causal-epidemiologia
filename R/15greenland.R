@@ -31,11 +31,11 @@ a0<-7
 
 # Arbitrando os valores de ORdu, OReu e pu0 
 ORdu<-2.0 # associação entre o gene do fumo e câncer de pulmão
-ORxu<-81.00 # associação entre o fumo e o gene do fumo
+OReu<-81.00 # associação entre o fumo e o gene do fumo
 pu0<-0.10 # prevalência do gene do fumo em não fumantes
 
 # Calculando pu1
-pu1=(ORxu*pu0)/(1-pu0+ORxu*pu0)
+pu1=(OReu*pu0)/(1-pu0+OReu*pu0)
 
 # Calculando b11 e b01
 b11<-pu1*b1
