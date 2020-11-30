@@ -17,7 +17,7 @@ data(lalonde)
 tapply(lalonde$re78, lalonde$treat, summary)
 
 # Estimando associação em modelo de regressão não ajustado
-reg <- lm(re78 ~ treat,data=lalonde)
+reg <- lm(re78 ~ treat, data=lalonde)
 summary(reg)
 # Obtendo intervalo de confiança de 95%
 confint(reg)
