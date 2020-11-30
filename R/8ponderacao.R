@@ -3,6 +3,10 @@
 # 8.2.1. Script para estimar o efeito causal por meio da ponderação pelo inverso da probabilidade de seleção no R
 # página 151-154
 
+# arquivo salvo em UTF-8
+# Se os caracteres acentuados e a cedilha não aparecerem corretamente
+# No R Studio, escolha a opção File : Reopen with Encoding: UTF-8
+
 # Instalando pacote survey
 install.packages("survey")
 
