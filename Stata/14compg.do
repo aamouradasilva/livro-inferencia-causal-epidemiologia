@@ -43,8 +43,8 @@ by copia, sort: summarize treat
 * ou se ninguém estivesse exposto (copia=0)
 predict resp
 
-* Verificando os valores médios das  predições no banco original 
-* e nas cópias de expostos e não expostos
+* Verificando os valores médios das  predições  
+* nas cópias de expostos e não expostos
 by copia, sort: summarize resp
 
 * Armazenando os valores das estimativas em uma matriz
