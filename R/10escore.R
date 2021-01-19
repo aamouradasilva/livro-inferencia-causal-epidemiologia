@@ -194,11 +194,14 @@ confint(glm1)
 
 # 10.1.2. Pareamento com escore de propensão
 
-# Carregando pacote MatchIt
-library(MatchIt)
+# Carregando pacote twang
+library(twang)
 
 # Abrindo banco de dados - lalonde
 data(lalonde)
+
+# Carregando pacote MatchIt
+library(MatchIt)
 
 # Estimando o escore de propensão por regressão logística
 ps <- glm(treat ~ age + educ + black + hispan + nodegree + married + re74 + re75, 
@@ -215,10 +218,10 @@ head(lalonde)
 # Pareamento vizinho mais próximo razão 1:1
 set.seed(1)
 nnmatch <- matchit(treat ~ age + educ + black + hispan + nodegree + married + re74 + re75, 
-                   data =lalonde, distance="linear.logit", method= "nearest", ratio = 1)
+                   data =lalonde, distance="glm", link="linear.logit", method= "nearest", ratio = 1)
 
 # Checando balanceamento
-summary(nnmatch, standardize=TRUE)
+summary(nnmatch)
 
 # Criando o arquivo pareado
 match <- match.data(nnmatch)
@@ -240,8 +243,8 @@ confint(fit)
 # Pareamento vizinho mais próximo com distância máxima de 0.1 desvio padrão
 set.seed(1)
 nnmatchc <- matchit(treat ~ age + educ + black + hispan + nodegree + married + re74 + re75, 
-                    data =lalonde, distance="linear.logit", method= "nearest", caliper = 0.1)
-summary(nnmatchc, standardize=TRUE)
+                    data =lalonde, distance="glm", link="linear.logit", method= "nearest", caliper = 0.1)
+summary(nnmatchc)
 
 # Criação do arquivo pareado
 match <- match.data(nnmatchc)
@@ -265,8 +268,8 @@ confint(fit)
 library(optmatch)
 set.seed(1)
 opmatch <- matchit(treat ~ age + educ + black + hispan + nodegree + married + re74 + re75, 
-                   data =lalonde, distance="linear.logit")
-summary(opmatch, standardize=TRUE)
+                   data =lalonde, distance="glm", link="linear.logit")
+summary(opmatch)
 
 # Criação do arquivo pareado
 match <- match.data(opmatch)
@@ -296,6 +299,8 @@ library(Matching)
 library(rbounds)
 
 # Usando o comando attach para acessar variáveis de um banco de dados pelo nome
+library(twang)
+data(lalonde)
 attach(lalonde)
 
 # Definindo Y desfecho Tr tratamento X preditores do tratamento
