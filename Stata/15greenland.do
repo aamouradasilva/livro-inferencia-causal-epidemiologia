@@ -1,8 +1,8 @@
 * Livro Introdução à Inferência Causal em Epidemiologia: uma abordagem gráfica e contrafatual
 * Capítulo 15
 * 15.5. Análise de Sensibilidade pelo método de Greenland no Stata
-* páginas 306
-* resultados da linha 1 da tabela 15.3 (página 302)
+* páginas 370-371
+* resultados da linha 1 da tabela 15.3 (página 366)
 
 * Instalando módulo episens
 ssc install episens
