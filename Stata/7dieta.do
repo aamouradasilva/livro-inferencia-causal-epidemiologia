@@ -1,7 +1,7 @@
 * Livro Introdução à Inferência Causal em Epidemiologia: uma abordagem gráfica e contrafatual
 * Capítulo 7
 * 7.4. Exemplo numérico de viés de colisão - Dieta e risco de câncer não relacionado com a dieta
-* página 127
+* página 164
 
 * Entrada de dados 
 input t d c n 
