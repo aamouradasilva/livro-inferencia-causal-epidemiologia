@@ -1,7 +1,7 @@
 * Livro Introdução à Inferência Causal em Epidemiologia: uma abordagem gráfica e contrafatual
 * Capítulo 6
 * 6.1.2. Exercício resolvido - o paradoxo de Simpson
-* página 97
+* página 130
 
 * Entrada de dados 
 input t d c n
