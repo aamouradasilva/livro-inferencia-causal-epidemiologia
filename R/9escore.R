@@ -1,7 +1,7 @@
 # Livro Introdução à Inferência Causal em Epidemiologia: uma abordagem gráfica e contrafatual
 # Capítulo 9
 # 9.2.1. Script para estimar o escore de propensão por meio de regressão logística no R
-# página 182
+# páginas 228-229
 
 # arquivo salvo em UTF-8
 # Se os caracteres acentuados e a cedilha não aparecerem corretamente
