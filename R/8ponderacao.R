@@ -1,7 +1,7 @@
 # Livro Introdução à Inferência Causal em Epidemiologia: uma abordagem gráfica e contrafatual
 # Capítulo 8
 # 8.2.1. Script para estimar o efeito causal por meio da ponderação pelo inverso da probabilidade de seleção no R
-# página 151-154
+# página 193-194
 
 # arquivo salvo em UTF-8
 # Se os caracteres acentuados e a cedilha não aparecerem corretamente
