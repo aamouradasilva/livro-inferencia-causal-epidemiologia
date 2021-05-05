@@ -1,7 +1,7 @@
 * Livro Introdução à Inferência Causal em Epidemiologia: uma abordagem gráfica e contrafatual
 * Capítulo 9
 * 9.2.2. Rotina para estimar o escore de propensão por meio de regressão logística no Stata
-* página 183-184
+* página 229-230
 
 * Entrada de dados
 input esf renda escolaridade
