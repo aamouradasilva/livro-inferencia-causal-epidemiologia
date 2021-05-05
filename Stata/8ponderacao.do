@@ -1,7 +1,7 @@
 * Livro Introdução à Inferência Causal em Epidemiologia: uma abordagem gráfica e contrafatual
 * Capítulo 8
 * 8.2.2. Script para estimar o efeito causal por meio da ponderação pelo inverso da probabilidade de seleção no Stata
-* página 154-156
+* páginas 195-197
 
 
 * Construindo o banco de dados
