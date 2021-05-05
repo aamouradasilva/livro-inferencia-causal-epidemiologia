@@ -63,7 +63,7 @@ graph box pslog, ytitle(Escore de propensão) by(treat)
 * Ponderação com escore de propensão
 * calculando os pesos usando ATE - Efeito médio do tratamento
 * para o grupo de tratamento = 1/ps
-* para o grupo controle= 1/(1-ps)
+* para o grupo-controle= 1/(1-ps)
 gen wa=1/pslog if treat==1
 replace wa=1/(1-pslog) if treat==0
 
