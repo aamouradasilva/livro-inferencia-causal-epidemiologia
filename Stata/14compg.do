@@ -1,7 +1,7 @@
 * Livro Introdução à Inferência Causal em Epidemiologia: uma abordagem gráfica e contrafatual
 * Capítulo 14
 * 14. Exemplo de análise usando computação G paramétrica no Stata
-* páginas 285-292
+* páginas 345-353
 
 * Abrindo o banco de dados lalonde
 use lalonde
