@@ -1,7 +1,7 @@
 * Livro Introdução à Inferência Causal em Epidemiologia: uma abordagem gráfica e contrafatual
 * Capítulo 11
 * 10. Exemplo de análise com escore de propensão em Epidemiologia no Stata
-* páginas 231-253
+* páginas 283-309
 
 
 * 11.1. Estimativa do efeito causal por meio do escore de propensão
