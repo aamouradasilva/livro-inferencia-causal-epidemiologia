@@ -1,7 +1,7 @@
 * Livro Introdução à Inferência Causal em Epidemiologia: uma abordagem gráfica e contrafatual
 * Capítulo 12
 * 12.4. Cálculo da computação G paramétrica no Stata
-* páginas 264-268
+* páginas 322-325
 
 
 
