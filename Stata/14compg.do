@@ -54,7 +54,7 @@ summarize resp if copia == 0
 matrix est = (est \ `r(mean)')
 matrix est = (est \ est[1,1]-est[2,1]) 
 
-* Inserindo cabeçalhos para as linhas e coluna da matriz 
+* Inserindo cabeçalhos para as linhas e colunas da matriz 
 * D=desfecho t=tratamento
 matrix rownames est = E(D(t=1)) E(D(t=0)) Diferença
 matrix colnames est = Estimativa
