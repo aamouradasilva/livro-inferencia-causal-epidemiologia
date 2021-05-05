@@ -93,7 +93,7 @@ boxplot(pslog ~ treat, data=lalonde, ylab="Escore de propensao", xlab="Programa 
 # Ponderação com escore de propensão
 # calculando os pesos usando ATE - Efeito médio do tratamento
 # para o grupo de tratamento = 1/ps
-# para o grupo controle= 1(1-ps)
+# para o grupo-controle= 1(1-ps)
 lalonde$peso.ATE <- ifelse(lalonde$treat == 1, 1/lalonde$pslog, 1/(1-lalonde$pslog))
 
 # Verificando se o peso foi incorporado ao banco de dados
