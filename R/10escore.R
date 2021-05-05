@@ -1,7 +1,7 @@
 # Livro Introdução à Inferência Causal em Epidemiologia: uma abordagem gráfica e contrafatual
 # Capítulo 10
 # 10. Exemplo de análise com escore de propensão em Epidemiologia no R
-# páginas 197-230
+# páginas 247-282
 
 # arquivo salvo em UTF-8
 # Se os caracteres acentuados e a cedilha não aparecerem corretamente
