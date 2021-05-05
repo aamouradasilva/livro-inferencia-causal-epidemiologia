@@ -1,7 +1,7 @@
 # Livro Introdução à Inferência Causal em Epidemiologia: uma abordagem gráfica e contrafatual
 # Capítulo 15
 # 15.4. Script no R - Análise de Sensibilidade pelo método de Greenland
-# páginas 303-306
+# páginas 367-369
 
 # arquivo salvo em UTF-8
 # Se os caracteres acentuados e a cedilha não aparecerem corretamente
@@ -9,7 +9,7 @@
 
 # método de Greenland
 # Arbitrando os valores de ORdu, OReu e pu0 
-# dados Doll e Hill (1952)
+# dados Doll & Hill (1952)
 
 install.packages("descr")
 library(descr)
