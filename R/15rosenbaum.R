@@ -1,7 +1,7 @@
 # Livro Introdução à Inferência Causal em Epidemiologia: uma abordagem gráfica e contrafatual
 # Capítulo 15
 # 15.6. Abordagens de Rosenbaum
-# páginas 309-312
+# páginas 374-377
 
 # arquivo salvo em UTF-8
 # Se os caracteres acentuados e a cedilha não aparecerem corretamente
