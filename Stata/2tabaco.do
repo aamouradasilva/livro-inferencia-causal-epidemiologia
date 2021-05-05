@@ -1,7 +1,7 @@
 * Livro Introdução à Inferência Causal em Epidemiologia: uma abordagem gráfica e contrafatual
 * Capítulo 2
 * 2.2.2. Cálculo do efeito causal médio com as respostas potenciais fatual e contrafatual no Stata
-* página 23-24
+* página 43
 
 * Entrada de dados
 input d1 d0 n
