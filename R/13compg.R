@@ -7,6 +7,10 @@
 # Se os caracteres acentuados e a cedilha não aparecerem corretamente
 # No R Studio, escolha a opção File : Reopen with Encoding: UTF-8
 
+# Instalando os pacotes necessários
+install.packages("twang")
+install.packages("descr")
+
 # Carregando pacote twang
 library(twang)
 
