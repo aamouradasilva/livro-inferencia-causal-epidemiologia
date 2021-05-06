@@ -102,7 +102,7 @@ tebalance density educ
 * 11.1.2 Pareamento com escore de propensão
 
 * Abrindo banco de dados - lalonde
-use lalonde
+use lalonde, clear
 
 * Estimação do escore de propensão por regressão logística
 logistic treat age educ black hispan nodegree married re74 re75
