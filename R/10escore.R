@@ -268,7 +268,7 @@ confint(fit)
 library(optmatch)
 set.seed(1)
 opmatch <- matchit(treat ~ age + educ + black + hispan + nodegree + married + re74 + re75, 
-                   data =lalonde, distance="glm", link="linear.logit")
+                   data =lalonde, distance="glm", link="linear.logit", method="full")
 summary(opmatch)
 
 # Criação do arquivo pareado
